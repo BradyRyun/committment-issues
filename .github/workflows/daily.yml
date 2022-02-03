@@ -31,5 +31,5 @@ jobs:
         run: |
           echo "${{ steps.date.outputs.date }}" > date.txt
           git add .
-          git commit -m "Brand new commit"
-          git push origin master
+          git commit -m "${{ steps.date.outputs.date }}"
+          git push origin main
