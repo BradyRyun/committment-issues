@@ -19,18 +19,16 @@ jobs:
       
       - id: randomness
         name: 50% chance to do the commit
-        run: echo "PROCEED=$((RANDOM%2))" >> $GITHUB_ENV
-        shell: bash
+        run: echo "::set-output name=cont::$((RANDOM%2))"
 
       - name: Echo the proceed variable
-        run: echo env.PROCEED
-        shell: bash
+        run: echo "${{ steps.randomness.outputs.cont }}"
         
-      - if: env.PROCEED == '0'
+      - if: "${{ steps.randomness.outputs.cont == '0' }}"
         name: Cancelling
         uses: andymckay/cancel-action@0.2
       
-      - if: env.PROCEED == '0'
+      - if: "${{ steps.randomness.outputs.cont == '0' }}" 
         name: Waiting for cancellation
         run: sleep 30
       
