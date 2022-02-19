@@ -45,4 +45,4 @@ jobs:
           echo "${{ steps.date.outputs.date }}" > date.txt
           git add .
           git commit -m "${{ steps.date.outputs.date }}"
-          git push origin main
+          git push -f origin main
