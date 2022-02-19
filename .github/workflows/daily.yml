@@ -17,7 +17,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - id: Roll dice
+      - id: randomness
+        name: 50% chance to do the commit
         run: echo "PROCEED=$((RANDOM%2))" >> $GITHUB_ENV
         shell: bash
 
