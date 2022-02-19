@@ -22,6 +22,10 @@ jobs:
         run: echo "PROCEED=$((RANDOM%2))" >> $GITHUB_ENV
         shell: bash
 
+      - name: Echo the proceed variable
+        run: echo env.PROCEED
+        shell: bash
+        
       - if: env.PROCEED == '0'
         name: Cancelling
         uses: andymckay/cancel-action@0.2
