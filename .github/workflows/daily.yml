@@ -23,16 +23,16 @@ jobs:
       #   name: 50% chance to do the commit
       #   run: echo "::set-output name=cont::$((RANDOM%2))"
 
-      - name: Echo the proceed variable
-        run: echo "${{ steps.randomness.outputs.cont }}"
+      # - name: Echo the proceed variable
+      #   run: echo "${{ steps.randomness.outputs.cont }}"
         
-      - if: "${{ steps.randomness.outputs.cont == '0' }}"
-        name: Cancelling
-        uses: andymckay/cancel-action@0.2
+      # - if: "${{ steps.randomness.outputs.cont == '0' }}"
+      #   name: Cancelling
+      #   uses: andymckay/cancel-action@0.2
       
-      - if: "${{ steps.randomness.outputs.cont == '0' }}" 
-        name: Waiting for cancellation
-        run: sleep 30
+      # - if: "${{ steps.randomness.outputs.cont == '0' }}" 
+      #   name: Waiting for cancellation
+      #   run: sleep 30
       
       - name: Get current date
         id: date
