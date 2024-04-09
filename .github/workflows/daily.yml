@@ -19,9 +19,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - id: randomness
-        name: 50% chance to do the commit
-        run: echo "::set-output name=cont::$((RANDOM%2))"
+      # - id: randomness
+      #   name: 50% chance to do the commit
+      #   run: echo "::set-output name=cont::$((RANDOM%2))"
 
       - name: Echo the proceed variable
         run: echo "${{ steps.randomness.outputs.cont }}"
