@@ -19,8 +19,6 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.PAT_TOKEN }}
       - name: Configure git
         run: |
           git config user.name "GitHubActions"
